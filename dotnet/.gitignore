@@ -1,0 +1,61 @@
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# MSBuild Binary Log
+*.binlog
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/
+.vscode-test/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# DotNet specific
+*.dotnet_tool
+*.nuget/
+*.nupkg
+*.snupkg
+*.symbols.nupkg
+*.vs/
+*.vscode/
+*.userprefs
+*.userosscache
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ide/
+bin/
+obj/
