@@ -6,13 +6,14 @@ Dev containers are Docker containers that are specifically configured to provide
 
 Microsoft's spot for existing definitions, and instructions for developing your own can be found at [https://containers.dev/](containers.dev).
 
-### Which Dev Continers are featured here?
+### Which Dev Projects are featured here?
 In this repository, we are focused on three types of Dev Containers.
 1) C++
-2) Dotnet ith c#
+2) Dotnet with c#
 3) Java
+4) Azure Functions with node.js
 
-### The C++ Dev Container
+### The C++ Dev Project
 
 In order to run the c++ file, type the following in the command line in the Dev Container.
 
@@ -27,6 +28,8 @@ g++ hello.cpp -o hello
 
 Enter your name and the prompt, and watch as it's returned to you backwards!
 
-### The Dotnet Container
+### The Dotnet Project
 
-### The Java Container
+### The Java Project
+
+### The Azure Functions node.js Project
