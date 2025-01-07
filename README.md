@@ -13,7 +13,7 @@ In this repository, we are focused on three types of Dev Containers.
 3) Java
 4) Azure Functions with node.js
 
-### The C++ Dev Project
+## The C++ Dev Project
 
 In order to run the c++ file, type the following in the command line in the Dev Container.
 
@@ -28,8 +28,43 @@ g++ hello.cpp -o hello
 
 Enter your name and the prompt, and watch as it's returned to you backwards!
 
-### The Dotnet Project
+Verifying this works:
 
-### The Java Project
+✔️ Local Dev Container
 
-### The Azure Functions node.js Project
+❓Codespaces
+
+## The Dotnet Project
+
+This is a fun web page that will show a random scientist.
+
+In order to run this project, type the following in the command line in the Dev Container.
+
+```
+dotnet run
+```
+
+Verifying this works:
+
+✔️ Local Dev Container
+
+✔️ Codespaces
+
+
+## The Java Project
+
+## The Azure Functions node.js Project
+
+
+Verifying this works:
+
+This is a fun Azure Functions project in node.js that when run, it will display an random scientist in the console every minute.
+
+In order to get this project to run,  type the following in the command line in the Dev Container.
+```
+func start
+```
+
+❓Local Dev Container
+
+❓Codespaces

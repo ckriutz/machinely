@@ -2,7 +2,7 @@
   "name": "Machinely Azure Functions (Node.js)",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspaces/machinely/node-function",
+  "workspaceFolder": "/workspaces/node-function",
   "forwardPorts": [
     7071,
     10000,
