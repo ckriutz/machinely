@@ -1,0 +1,14 @@
+### test http requests
+
+//send form data / POST request
+POST http://localhost:8080/employee
+content-type: application/x-www-form-urlencoded
+
+name=Adnan Khan&position=Cloud Solutions Architect&startDate=-04-14-2024
+
+### / GET request
+
+GET http://localhost:8080/employee?name=Adnan Khan
+
+###
+
