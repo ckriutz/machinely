@@ -53,6 +53,15 @@ Verifying this works:
 
 ## The Java Project
 
+This is a simple Java REST API using Spring Boot, maven and a backend postgreSQL db
+
+In order to run this project, type the following in the command line in the Dev Container.
+
+```bash
+mvn clean package -DskipTests
+docker-compose up
+```
+
 ## The Azure Functions node.js Project
 
 
