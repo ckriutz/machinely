@@ -7,11 +7,12 @@ Dev containers are Docker containers that are specifically configured to provide
 Microsoft's spot for existing definitions, and instructions for developing your own can be found at [https://containers.dev/](containers.dev).
 
 ### Which Dev Projects are featured here?
-In this repository, we are focused on three types of Dev Containers.
+In this repository, we are focused on five types of Dev Containers.
 1) C++
 2) Dotnet with c#
 3) Java
 4) Azure Functions with node.js
+5) Cloud Native development
 
 ## The C++ Dev Project
 
@@ -77,3 +78,7 @@ func start
 ❓Local Dev Container
 
 ❓Codespaces
+
+## The Cloud-Native development project
+
+This dev container has toolong for Java 21, Kubernetes/kubectl, Docker, Helm & Azure Cli
