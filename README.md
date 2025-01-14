@@ -57,9 +57,14 @@ Verifying this works:
 This is a simple Java REST API using Spring Boot, maven and a backend postgreSQL db
 
 In order to run this project, type the following in the command line in the Dev Container.
-
+### for dev mode and to test against running DB
 ```bash
-mvn clean package -DskipTests
+docker-compose up -d postgres
+mvn clean package
+mvn spring-boot:run
+```
+### to test in container context
+```bash
 docker-compose up
 ```
 

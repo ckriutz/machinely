@@ -7,7 +7,7 @@ To build the project, run the following command:
 mvn clean package -DskipTests
 ```
 
-## launch the svc and backend database
+## launch the svc and backend database as containers
 ```sh
 docker-compose up
 ```
