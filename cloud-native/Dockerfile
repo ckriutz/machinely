@@ -1,5 +1,5 @@
 # First stage: Build the application using Maven
-FROM maven:3.9-eclipse-temurin-21-alpinekubectl port-forward <pod-name> 8080:8080 AS build
+FROM maven:3.9-eclipse-temurin-21-alpine AS build
 
 # Set the working directory
 WORKDIR /app
