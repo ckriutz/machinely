@@ -1,27 +1,45 @@
-# Cloud Native Developer profile
-## Uses java 21, Docker, local Kubernetes cluster (minikube) and kubectl & helm tooling
+## Cloud Native Developer Codespace
+
+Uses Java 21, Docker, local Kubernetes cluster (minikube), kubectl, Helm and Azure cli.
 
 ## Build Instructions
 
-To build the project, run the following command:
+**To build the project**
 ```sh
 mvn clean package 
 ```
 
-## launch the svc and backend database
+**To build the project**
 ```sh
-docker build -t <container_name> .
+mvn spring-boot:run 
 ```
 
-## Create helm chart for app
+**deploy sample pod in local k8s cluster**
+```sh
+kubectl run nginx --image=nginx
+```
 
-## Deploy chart to locak k8s cluster
-
-## Use kubectl to create an Nginx pod
-
-## Use az cli to create a AKS cluster
-
-## Use helm to deploy chart to AKS cluster
+**view pods in local k8s cluster**
+```sh
+kubectl get pods
+```
+**Use helm cli to validate chart**
+```sh
+helm lint k8s/k8sapp/
+```
+**Use helm cli to install chart to local cluster**
+```sh
+helm install k8sdemoapp k8s/k8sapp/
+```
+**Use helm/kubectl cli to validate install**
+```sh
+helm list
+kubectl get pods
+```
+**Use helm cli to uninstall chart**
+```sh
+helm uninstall k8sdemoapp
+```
 
 
 
