@@ -29,11 +29,6 @@ g++ hello.cpp -o hello
 
 Enter your name and the prompt, and watch as it's returned to you backwards!
 
-Verifying this works:
-
-✔️ Local Dev Container
-
-❓Codespaces
 
 ## The Dotnet Project
 
@@ -44,13 +39,6 @@ In order to run this project, type the following in the command line in the Dev 
 ```
 dotnet run
 ```
-
-Verifying this works:
-
-✔️ Local Dev Container
-
-✔️ Codespaces
-
 
 ## The Java Project
 
@@ -70,19 +58,13 @@ docker-compose up
 
 ## The Azure Functions node.js Project
 
-
-Verifying this works:
-
 This is a fun Azure Functions project in node.js that when run, it will display an random scientist in the console every minute.
 
 In order to get this project to run,  type the following in the command line in the Dev Container.
+
 ```
 func start
 ```
-
-❓Local Dev Container
-
-❓Codespaces
 
 ## The Cloud-Native development project
 
