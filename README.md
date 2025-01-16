@@ -45,13 +45,13 @@ dotnet run
 This is a simple Java REST API using Spring Boot, maven and a backend postgreSQL db
 
 In order to run this project, type the following in the command line in the Dev Container.
-### for dev mode and to test against running DB
+**for dev mode and to test against running DB**
 ```bash
 docker-compose up -d postgres
 mvn clean package
 mvn spring-boot:run
 ```
-### to test in container context
+**to test with Docker compose in container context**
 ```bash
 docker-compose up
 ```
@@ -68,4 +68,6 @@ func start
 
 ## The Cloud-Native development project
 
-This dev container has toolong for Java 21, Kubernetes/kubectl, Docker, Helm & Azure Cli
+This project configuration has tooling for Java 21, Docker, Kubernetes cluster (minikube), kubectl, Helm and Azure cli.
+
+To test building and deploying of a container app via a Helm chart, pls refer to the instructions in the project's README.md file.
