@@ -29,16 +29,21 @@ helm lint k8s/k8sapp/
 ```
 **Use helm cli to install chart to local cluster**
 ```sh
-helm install k8sdemoapp k8s/k8sapp/
+helm install k8sapp k8s/k8sapp/
 ```
 **Use helm/kubectl cli to validate install**
 ```sh
 helm list
 kubectl get pods
 ```
+**Use port forwarding to test traffic to pod**
+```sh
+kubectl port-forward pod/<POD_NAME> 8080:8080
+```
+
 **Use helm cli to uninstall chart**
 ```sh
-helm uninstall k8sdemoapp
+helm uninstall k8sapp
 ```
 
 
