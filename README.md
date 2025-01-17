@@ -4,7 +4,7 @@ Demo for Dev Containers
 ## What are Dev Containers?
 Dev containers are Docker containers that are specifically configured to provide a fully featured development environment. They are used to define an environment in which you develop your application before you are ready to deploy. Dev containers are structured metadata format and are defined in a devcontainer.json file. You can use the default dev container configuration, a predefined dev container configuration, or create a custom dev container configuration.
 
-Microsoft's spot for existing definitions, and instructions for developing your own can be found at [https://containers.dev/](containers.dev).
+Microsoft's spot for existing definitions, and instructions for developing your own can be found at [https://containers.dev/](https://containers.dev/).
 
 ### Which Dev Projects are featured here?
 In this repository, we are focused on five types of Dev Containers.
