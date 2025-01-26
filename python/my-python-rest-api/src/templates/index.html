@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Employee API</h1>
+        
+        <h2 class="mt-4">Create Employee</h2>
+        <form id="createEmployeeForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="position">Position</label>
+                <input type="text" class="form-control" id="position">
+            </div>
+            <div class="form-group">
+                <label for="start_date">Start Date</label>
+                <input type="datetime-local" class="form-control" id="start_date" required>
+            </div>
+            <div class="form-group">
+                <label for="end_date">End Date</label>
+                <input type="datetime-local" class="form-control" id="end_date">
+            </div>
+            <button type="submit" class="btn btn-primary">Create Employee</button>
+        </form>
+
+        <h2 class="mt-4">Employees List</h2>
+        <ul id="employeesList" class="list-group"></ul>
+
+        <h2 class="mt-4">Find Employees by Name</h2>
+        <form id="findEmployeesForm">
+            <div class="form-group">
+                <label for="wildcard_name">Name</label>
+                <input type="text" class="form-control" id="wildcard_name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Find Employees</button>
+        </form>
+        <ul id="foundEmployeesList" class="list-group mt-2"></ul>
+    </div>
+
+    <script>
+        document.getElementById('createEmployeeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const position = document.getElementById('position').value;
+            const start_date = document.getElementById('start_date').value;
+            const end_date = document.getElementById('end_date').value;
+
+            fetch('/employees', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, position, start_date, end_date })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Employee created!');
+                document.getElementById('createEmployeeForm').reset();
+                loadEmployees();
+            });
+        });
+
+        document.getElementById('findEmployeesForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const wildcard_name = document.getElementById('wildcard_name').value;
+
+            fetch(`/employees/search?name=${wildcard_name}`)
+            .then(response => response.json())
+            .then(data => {
+                const foundEmployeesList = document.getElementById('foundEmployeesList');
+                foundEmployeesList.innerHTML = '';
+                data.forEach(employee => {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    li.textContent = `${employee.name} - ${employee.position}`;
+                    foundEmployeesList.appendChild(li);
+                });
+            });
+        });
+
+        function loadEmployees() {
+            fetch('/employees')
+            .then(response => response.json())
+            .then(data => {
+                const employeesList = document.getElementById('employeesList');
+                employeesList.innerHTML = '';
+                data.forEach(employee => {
+                    const li = document.createElement('li');
+                    li.className = 'list-group-item';
+                    li.textContent = `${employee.name} - ${employee.position}`;
+                    employeesList.appendChild(li);
+                });
+            });
+        }
+
+        loadEmployees();
+    </script>
+</body>
+</html>
