@@ -4,12 +4,12 @@
 POST http://localhost:8080/employee
 content-type: application/x-www-form-urlencoded
 
-name=John Doe&position=Cloud Solutions Architect&startDate=-04-14-2024
+name=Jane Doe&position=Cloud Solutions Architect&startDate=-04-14-2024
 
 ### 
 
 //GET request
-GET http://localhost:8080/employee?name=John Doe
+GET http://localhost:8080/employee?name=Jane Doe
 
 ###
 

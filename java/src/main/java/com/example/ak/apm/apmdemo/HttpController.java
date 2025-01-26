@@ -46,13 +46,27 @@ public class HttpController {
     // create a logger using java.util.logging
     private static final Logger log = Logger.getLogger(HttpController.class.getName());
 
+    /**
+     * Handles the HTTP GET request to say hello to a person.
+     *
+     * @param name the name of the person
+     * @return a greeting message
+     */
     @GetMapping("/")
     public String getMethodName(@RequestParam String name) {
         log.info("Saying hello to: " + name);
         return "hello " + name;
     }
 
-    @CrossOrigin(origins = "*")  
+    /**
+     * Handles the HTTP POST request to add a new employee.
+     *
+     * @param name the name of the employee
+     * @param position the position of the employee
+     * @param startDate the start date of the employee in the format "yyyy-MM-dd"
+     * @return a confirmation message containing the employee's name, position, and start date
+     */
+    @CrossOrigin(origins = "*")
     @PostMapping("/employee")
     public String postMethodName(@RequestParam String name, @RequestParam String position,
             @RequestParam String startDate) {
@@ -63,35 +77,26 @@ public class HttpController {
         employee.setName(name);
         employee.setPosition(position);
 
-        //convert string in YYYY-DD-MM format to Date
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-
-        //initialize date to todays date in YYYY-mm-dd format
-        Date date = new Date();
-        try {
-            date = formatter.parse(startDate);
-        } catch (ParseException e) {
-           log.severe(e.getMessage());
-            e.printStackTrace();
-        }
+        Date date = parseDate(startDate);
         employee.setStartDate(date);
 
-        employeeRepository.save(employee);
+        employeeService.saveEmployee(employee);
 
         log.info("Employee added: " + employee.toString());
-       // log.info("Writing to queue");
-
-        //jmsTemplate.send(QUEUE_NAME, session -> {
-        //    BytesMessage message = session.createBytesMessage();
-        //    message.setJMSMessageID(Integer.toString(employee.getEmployeeID()));
-        //    message.writeUTF(employee.getName());
-        //    message.setStringProperty("EMP_NAME", employee.getName());
-        //    return message;
-        //});
-        //log.fine("Writing to queue completed");
         return "employee " + name + " " + position + " " + startDate;
     }
 
+    private Date parseDate(String dateStr) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = new Date();
+        try {
+            date = formatter.parse(dateStr);
+        } catch (ParseException e) {
+            log.severe(e.getMessage());
+            e.printStackTrace();
+        }
+        return date;
+    }
 
     //do a get mapping that finds and employee by name and returns the response in JSOn format
     
@@ -101,7 +106,7 @@ public class HttpController {
         // return employee by name
         // read from database using EmployeeRepository
         log.info("Getting employee by name: " + name);
-        List<Employee> employees = employeeRepository.findByNameIgnoreCase(name);
+        List<Employee> employees = employeeService.findByNameIgnoreCase(name);
         //return employee as a JSON response
         return ResponseEntity.ok(employees);
     }   
@@ -151,6 +156,8 @@ public class HttpController {
         log.info("Echoing: " + value);
         return value;
     }
+
+    //
 
 
 

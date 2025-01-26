@@ -33,7 +33,7 @@
 				"vmware.vscode-boot-dev-pack",
 				// YAML language support
 				"redhat.vscode-yaml",
-				// Terraform
+				//Rest client
 				"humao.rest-client"
 			]
 		}
